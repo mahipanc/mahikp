@@ -12,3 +12,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     faders.forEach(fader => appearOnScroll.observe(fader));
 });
+ 
