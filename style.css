@@ -98,12 +98,13 @@ p, li {
 
 /* --- Images --- */
 img.profile {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 150px;          /* Set the width */
+    height: 150px;         /* Keep same for a square frame */
+    border-radius: 50%;    /* Circular shape */
     border: 3px solid var(--highlight);
     display: block;
     margin: 20px auto;
+    object-fit: cover;     /* Ensures the image fills the square without distortion */
 }
 
 /* --- Fade-in Animation --- */
