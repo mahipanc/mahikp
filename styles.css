@@ -1,11 +1,12 @@
 :root {
-    --bg-main: #e0e1dd;
-    --bg-section: #415a77;
-    --text: #0d1b2a;
-    --accent: #1b263b;
-    --highlight: #778da9;
+    --bg-main: #e0e1dd;      /* page background */
+    --bg-section: #415a77;   /* nav/footer background */
+    --text: #0d1b2a;         /* main text color */
+    --accent: #1b263b;       /* secondary accents */
+    --highlight: #778da9;    /* link hover, borders */
 }
 
+/* --- Global --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -45,7 +46,7 @@ nav {
 .nav-left li a,
 .nav-right li a {
     text-decoration: none;
-    color: var(--text);
+    color: var(--bg-main);  /* light text for dark nav */
     font-weight: bold;
     text-align: center;
     transition: color 0.3s;
@@ -55,6 +56,7 @@ nav {
     color: var(--highlight);
 }
 
+/* LinkedIn icon */
 .nav-right li a.icon-linkedin {
     display: inline-block;
     width: 30px;
@@ -81,7 +83,7 @@ section {
 
 .about-me {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;  /* profile image on right */
     align-items: center;
     gap: 30px;
 }
@@ -115,10 +117,10 @@ section {
 footer {
     background-color: var(--bg-section);
     text-align: left;
-    padding: 10px 20px;
-    color: var(--text);
+    padding: 5px 15px;  /* skinnier footer */
+    color: var(--bg-main);
     margin-top: 50px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 /* --- Responsive --- */
@@ -130,5 +132,14 @@ footer {
 
     .about-me img.profile {
         margin: 20px 0 0 0;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-left, .nav-right {
+        gap: 1rem;
     }
 }
