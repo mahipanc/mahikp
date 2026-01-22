@@ -1,8 +1,9 @@
 :root {
-    --bg-main: #293132;
-    --bg-section: #474044;
-    --text: #4F5165;
-    --accent: #50D8D7;
+    --bg-main: #FFFFFF;      /* page background */
+    --bg-section: #9DB5B2;   /* nav bar background */
+    --text: #3B413C;         /* main text color */
+    --accent: #DAF0EE;       /* secondary accent color */
+    --highlight: #94D1BE;    /* highlight / hover color */
 }
 
 * {
@@ -22,7 +23,7 @@ body {
 nav {
     background-color: var(--bg-section);
     display: flex;
-    justify-content: space-between; /* Left/right alignment */
+    justify-content: space-between; 
     align-items: center;
     padding: 1rem 2rem;
     position: sticky;
@@ -45,28 +46,25 @@ nav {
 .nav-right li a {
     text-decoration: none;
     color: var(--text);
-    font-weight: 500;
+    font-weight: bold; /* bolded nav text */
+    text-align: center; /* centered labels */
     transition: color 0.3s;
 }
 
-/* Hover effect for normal links */
+/* Hover effect for nav links */
 .nav-left li a:hover {
-    color: var(--accent);
+    color: var(--highlight);
 }
 
-/* LinkedIn button */
-.nav-right li a.button {
-    background-color: var(--accent);
-    color: var(--bg-main);
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
+/* LinkedIn icon */
+.nav-right li a.icon-linkedin img {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s;
 }
 
-.nav-right li a.button:hover {
-    background-color: var(--text);
-    color: var(--accent);
+.nav-right li a.icon-linkedin img:hover {
+    opacity: 0.7; /* subtle hover effect */
 }
 
 /* --- Sections --- */
@@ -96,4 +94,27 @@ p, li {
 img.profile {
     width: 150px;
     height: 150px;
-    bor
+    border-radius: 50%;
+    border: 3px solid var(--highlight);
+    display: block;
+    margin: 20px auto;
+}
+
+/* --- Fade-in Animation --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--highlight);
+    text-align: center;
+    padding: 50px 0;
+    color: var
