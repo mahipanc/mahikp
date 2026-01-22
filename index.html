@@ -2,164 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Name | Academic Dossier</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      font-family: Georgia, serif;
-      margin: 0;
-      background-color: #f8f8f8;
-      color: #222;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #ffffff;
-      border-bottom: 1px solid #ddd;
-      padding: 1rem 2rem;
-    }
-
-    nav {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav h1 {
-      font-size: 1.5rem;
-      margin: 0;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #222;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-      background-color: #ffffff;
-    }
-
-    section {
-      padding: 2.5rem 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    section:last-child {
-      border-bottom: none;
-    }
-
-    h2 {
-      margin-top: 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    blockquote {
-      margin: 1.5rem 0;
-      padding-left: 1rem;
-      border-left: 3px solid #ccc;
-      font-style: italic;
-    }
-  </style>
+  <title>Your Name | Dossier</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <header>
-  <nav>
-    <h1>Your Name</h1>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#linkedin">LinkedIn</a></li>
-      <li><a href="#quotes">Quotes</a></li>
+  <nav class="navbar">
+    <h1 class="site-title">Your Name</h1>
+    <ul class="nav-links">
+      <li><a href="index.html">About Me</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="linkedin.html">LinkedIn</a></li>
+      <li><a href="quotes.html">Quotes</a></li>
     </ul>
   </nav>
 </header>
 
-<main>
+<main class="container">
+  <section class="about">
+    <img src="assets/profile.jpg" alt="Profile photo or avatar" class="profile-img">
 
-  <section id="about">
     <h2>About Me</h2>
     <p>
-      <!-- ~500 words -->
-      Write a reflective, academic narrative about your intellectual growth,
-      interests, and trajectory. This should read like a polished personal
-      statement rather than a casual bio.
+      <!-- ~500 words here -->
+      Write this in a professional, reflective, college-level voice.
+      Focus on intellectual growth, research interests, and trajectory.
     </p>
-  </section>
 
-  <section id="resume">
-    <h2>Resume</h2>
-
-    <h3>Education</h3>
-    <p>University of North Carolina at Chapel Hill — Major, Year</p>
-
-    <h3>Research Experience</h3>
-    <p>Lab / Project — Role (Dates)</p>
-
-    <h3>Clinical / Service Experience</h3>
-    <p>Organization — Role</p>
-
-    <h3>Skills</h3>
-    <p>Research Methods | Technical Skills | Languages</p>
-  </section>
-
-  <section id="research">
-    <h2>Research Statement</h2>
     <p>
-      Describe your research interests, questions you are curious about,
-      and methods you want to learn. Use precise, causal language.
+      Continue narrative here. Revise heavily later.
     </p>
   </section>
-
-  <section id="linkedin">
-    <h2>LinkedIn</h2>
-    <p>
-      <a href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank">
-        linkedin.com/in/YOUR-USERNAME
-      </a>
-    </p>
-  </section>
-
-  <section id="quotes">
-    <h2>Selected Quotes</h2>
-
-    <blockquote>
-      “Insert an intellectually meaningful quote here.”
-      <br>— Author
-    </blockquote>
-
-    <blockquote>
-      “Second quote here.”
-      <br>— Author
-    </blockquote>
-  </section>
-
 </main>
 
 <footer>
-  © 2026 Your Name
+  <p>© 2026 Your Name</p>
 </footer>
 
 </body>
