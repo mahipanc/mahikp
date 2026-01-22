@@ -1,9 +1,9 @@
 :root {
-    --bg-main: #e0e1dd;        /* page background */
-    --bg-section: #415a77;     /* nav bar background */
-    --text: #0d1b2a;           /* main text color */
-    --accent: #1b263b;         /* headings and accents */
-    --highlight: #778da9;      /* hover / highlights */
+    --bg-main: #e0e1dd;
+    --bg-section: #415a77;
+    --text: #0d1b2a;
+    --accent: #1b263b;
+    --highlight: #778da9;
 }
 
 * {
@@ -46,8 +46,8 @@ nav {
 .nav-right li a {
     text-decoration: none;
     color: var(--text);
-    font-weight: bold; 
-    text-align: center; 
+    font-weight: bold;
+    text-align: center;
     transition: color 0.3s;
 }
 
@@ -73,38 +73,28 @@ nav {
     opacity: 0.7;
 }
 
-/* --- Sections --- */
-section {
+/* --- About Me Section Layout --- */
+section.about-me {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
     padding: 80px 20px;
     max-width: 900px;
     margin: 0 auto;
 }
 
-h1 {
-    color: var(--accent);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-h2 {
-    color: var(--text);
-    margin: 1rem 0;
-}
-
-p, li {
-    color: var(--text);
-    margin-bottom: 1rem;
-}
-
-/* --- Images --- */
-img.profile {
-    width: 150px;          /* Set the width */
-    height: 150px;         /* Keep same for a square frame */
-    border-radius: 50%;    /* Circular shape */
+section.about-me img.profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     border: 3px solid var(--highlight);
-    display: block;
-    margin: 20px auto;
-    object-fit: cover;     /* Ensures the image fills the square without distortion */
+    object-fit: cover;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+section.about-me .intro-text {
+    flex: 1;
 }
 
 /* --- Fade-in Animation --- */
@@ -123,8 +113,7 @@ img.profile {
 footer {
     background-color: var(--bg-section);
     text-align: left;
-    padding: 15px 20px;
+    padding: 10px 20px;
     color: var(--text);
     margin-top: 50px;
-    font-size: 0.9rem;
-}
+    font-size: 0.9r
