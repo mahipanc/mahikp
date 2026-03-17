@@ -1,11 +1,13 @@
+/* ================= Global Variables ================= */
 :root {
-    --bg-main: #e0e1dd;
-    --bg-section: #415a77;
-    --text: #0d1b2a;
-    --accent: #1b263b;
-    --highlight: #778da9;
+    --bg-main: #e0e1dd;      /* page background */
+    --text: #1b263b;         /* main body text */
+    --text-heading: #0d1b2a; /* headings */
+    --accent: #415a77;       /* buttons, highlights */
+    --highlight: #778da9;    /* hover, secondary highlights */
 }
 
+/* ================= Global Styles ================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,9 +21,9 @@ body {
     line-height: 1.6;
 }
 
-/* --- Navigation --- */
+/* ================= Navigation ================= */
 nav {
-    background-color: var(--bg-section);
+    background-color: var(--accent);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,110 +33,131 @@ nav {
     z-index: 1000;
 }
 
-.nav-left,
-.nav-right {
+.nav-left, .nav-right {
     list-style: none;
     display: flex;
     align-items: center;
 }
 
 .nav-left {
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-.nav-left li a,
-.nav-right li a {
+.nav-left li a, .nav-right li a {
     text-decoration: none;
-    color: var(--text);
+    color: var(--bg-main);
     font-weight: bold;
     text-align: center;
     transition: color 0.3s;
 }
 
-.nav-left li a:hover,
-.nav-right li a:hover {
+.nav-left li a:hover, .nav-right li a:hover {
     color: var(--highlight);
 }
 
-/* Nav Buttons */
+/* Navigation buttons */
 .btn-nav {
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 5px;
     background-color: var(--accent);
-    color: var(--bg-main);
-    font-weight: bold;
-    text-align: center;
-    transition: background 0.3s;
 }
 
-.btn-nav:hover {
-    background-color: var(--highlight);
-}
-
-/* Icon Links */
 .nav-right li a img {
     width: 30px;
     height: 30px;
     object-fit: contain;
-    display: block;
 }
 
-/* --- Landing Hero --- */
-.landing-hero {
+/* ================= Landing Page ================= */
+.landing-page {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 100px 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
 }
 
-.hero-text h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero-text .quote {
-    font-size: 1.2rem;
-    font-style: italic;
-}
-
-.hero-image img {
-    width: 400px;
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-.hero-button {
-    margin-top: 20px;
-}
-
-/* --- Section Headers --- */
-.page-header h1 {
-    color: var(--accent);
-    margin: 50px 0 20px 20px;
-}
-
-/* --- About / Content Sections --- */
-.about-me {
+.landing-text {
+    flex: 1;
     display: flex;
-    gap: 30px;
-    margin: 50px 20px;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.about-me img {
-    width: 200px;
-    height: 200px;
+.landing-text h1 {
+    font-size: 3rem;
+    color: var(--text-heading);
+    margin-bottom: 10px;
+}
+
+.landing-quote {
+    font-size: 1.5rem;
+    color: var(--highlight);
+    margin-bottom: 20px;
+}
+
+.btn-landing {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--bg-main);
+    font-weight: bold;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-landing:hover {
+    background-color: var(--highlight);
+}
+
+.landing-image img {
+    width: 350px;
+    height: auto;
     border-radius: 10px;
     object-fit: cover;
+}
+
+/* ================= Sections ================= */
+section {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: var(--text-heading);
+    margin-bottom: 15px;
+}
+
+p, li {
+    color: var(--text);
+}
+
+/* About Me Layout */
+.about-me {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-me img.profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--highlight);
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .intro-text {
     flex: 1;
 }
 
-/* --- Animations --- */
+/* ================= Animations ================= */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -146,24 +169,28 @@ nav {
     transform: translateY(0);
 }
 
-/* --- Footer --- */
-footer {
-    background-color: var(--bg-section);
-    text-align: left;
-    padding: 10px 20px;
-    color: var(--text);
-    margin-top: 50px;
-    font-size: 0.9rem;
-}
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    .landing-hero, .about-me {
+/* ================= Responsive ================= */
+@media (max-width: 900px) {
+    .landing-page {
         flex-direction: column;
         text-align: center;
     }
 
-    .about-me img {
+    .landing-image img {
+        width: 250px;
+        margin-top: 20px;
+    }
+
+    .btn-landing {
+        margin: 0 auto;
+    }
+
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me img.profile {
         margin: 20px 0 0 0;
     }
 }
