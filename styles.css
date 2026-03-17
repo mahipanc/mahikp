@@ -86,15 +86,15 @@ nav {
 }
 
 .landing-text h1 {
-    font-size: 3rem;
-    color: var(--text-main);
+    font-size: 3.5rem;        /* Bigger name */
+    color: #1B263B;           /* Name color */
     margin-bottom: 1rem;
 }
 
 .landing-quote {
-    font-size: 1.2rem;
+    font-size: 1.3rem;        /* Bigger quote */
+    color: #415A77;           /* Quote color */
     margin-bottom: 2rem;
-    color: var(--text-main);
 }
 
 .btn-landing {
@@ -114,8 +114,8 @@ nav {
 }
 
 .landing-image img {
-    width: 500px;       /* Increased from 400px */
-    max-width: 50%;     /* Keeps it responsive */
+    width: 550px;             /* Bigger image */
+    max-width: 55%;           /* Responsive */
     border-radius: 10px;
     object-fit: cover;
     box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
