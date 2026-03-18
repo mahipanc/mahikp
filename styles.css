@@ -1,10 +1,10 @@
 :root {
-    --bg-main: #E0E1DD;       /* Page background */
-    --bg-header: #415A77;     /* Navigation bar */
-    --text-main: #0D1B2A;     /* Main text */
-    --text-accent: #778DA9;   /* Button hover & accents */
-    --btn-bg: #1B263B;        /* Button background */
-    --btn-text: #E0E1DD;      /* Button text */
+    --bg-main: #E0E1DD;
+    --bg-header: #415A77;
+    --text-main: #0D1B2A;
+    --text-accent: #778DA9;
+    --btn-bg: #1B263B;
+    --btn-text: #E0E1DD;
 }
 
 * {
@@ -43,31 +43,42 @@ nav {
     gap: 1.5rem;
 }
 
-.nav-left li a,
-.nav-right li a {
+.nav-left li a {
     text-decoration: none;
     color: var(--btn-text);
     font-weight: bold;
-    text-align: center;
     transition: color 0.3s, transform 0.2s;
 }
 
-.nav-left li a:hover,
-.nav-right li a:hover {
+.nav-left li a:hover {
     color: var(--text-accent);
     transform: scale(1.05);
 }
 
-.nav-right li a img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    display: block;
-    transition: opacity 0.3s, transform 0.2s;
+/* --- Circular Social Icons --- */
+.nav-right {
+    gap: 10px;
 }
 
-.nav-right li a img:hover {
-    opacity: 0.7;
+.nav-right li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: var(--btn-bg);
+    border-radius: 50%;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.nav-right li a img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.nav-right li a:hover {
+    background-color: var(--text-accent);
     transform: scale(1.1);
 }
 
@@ -86,17 +97,18 @@ nav {
 }
 
 .landing-text h1 {
-    font-size: 3.5rem;        /* Bigger name */
-    color: #1B263B;           /* Name color */
+    font-size: 3.5rem;
+    color: #1B263B;
     margin-bottom: 1rem;
 }
 
 .landing-quote {
-    font-size: 1.3rem;        /* Bigger quote */
-    color: #415A77;           /* Quote color */
+    font-size: 1.3rem;
+    color: #415A77;
     margin-bottom: 2rem;
 }
 
+/* --- Landing Button --- */
 .btn-landing {
     display: inline-block;
     padding: 12px 24px;
@@ -113,9 +125,10 @@ nav {
     transform: scale(1.05);
 }
 
+/* --- Landing Image --- */
 .landing-image img {
-    width: 550px;             /* Bigger image */
-    max-width: 55%;           /* Responsive */
+    width: 550px;
+    max-width: 55%;
     border-radius: 10px;
     object-fit: cover;
     box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
@@ -129,12 +142,11 @@ section {
 }
 
 h1 {
-    color: var(--bg-header); /* Darker blue for headings */
+    color: var(--bg-header);
     margin-bottom: 1rem;
 }
 
 p {
-    color: var(--text-main);
     font-size: 1.1rem;
 }
 
@@ -148,23 +160,6 @@ p {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* --- Buttons --- */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--btn-bg);
-    color: var(--btn-text);
-    font-weight: bold;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-    background-color: var(--text-accent);
-    transform: scale(1.05);
 }
 
 /* --- Responsive --- */
