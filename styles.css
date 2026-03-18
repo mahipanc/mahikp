@@ -55,7 +55,7 @@ nav {
     transform: scale(1.05);
 }
 
-/* --- Circular Social Icons (Blended Style) --- */
+/* --- Circular Social Icons --- */
 .nav-right {
     gap: 10px;
 }
@@ -66,20 +66,20 @@ nav {
     justify-content: center;
     width: 42px;
     height: 42px;
-    background-color: var(--bg-main);   /* SAME as page background */
+    background-color: var(--bg-main);   /* matches site background */
     border-radius: 50%;
-    border: 2px solid var(--btn-bg);    /* subtle outline so it's visible */
+    border: 2px solid var(--btn-bg);    /* subtle outline */
     transition: transform 0.2s, background-color 0.3s;
 }
 
 .nav-right li a img {
-    width: 18px;
-    height: 18px;
+    width: 26px;   /* bigger icon inside */
+    height: 26px;
     object-fit: contain;
 }
 
 .nav-right li a:hover {
-    background-color: var(--text-accent);  /* soft hover color */
+    background-color: var(--text-accent);
     transform: scale(1.1);
 }
 
