@@ -55,7 +55,7 @@ nav {
     transform: scale(1.05);
 }
 
-/* --- Circular Social Icons --- */
+/* --- Circular Social Icons (Blended Style) --- */
 .nav-right {
     gap: 10px;
 }
@@ -66,8 +66,9 @@ nav {
     justify-content: center;
     width: 42px;
     height: 42px;
-    background-color: var(--btn-bg);
+    background-color: var(--bg-main);   /* SAME as page background */
     border-radius: 50%;
+    border: 2px solid var(--btn-bg);    /* subtle outline so it's visible */
     transition: transform 0.2s, background-color 0.3s;
 }
 
@@ -78,7 +79,7 @@ nav {
 }
 
 .nav-right li a:hover {
-    background-color: var(--text-accent);
+    background-color: var(--text-accent);  /* soft hover color */
     transform: scale(1.1);
 }
 
