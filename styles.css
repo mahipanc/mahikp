@@ -7,6 +7,7 @@
     --btn-text: #E0E1DD;
 }
 
+/* --- Global Styles --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -101,8 +102,6 @@ nav {
     font-size: 3.5rem;
     color: #1B263B;
     margin-bottom: 1rem;
-
-    /* subtle fade */
     opacity: 0;
     animation: fadeUp 0.8s ease forwards;
 }
@@ -111,7 +110,6 @@ nav {
     font-size: 1.3rem;
     color: #415A77;
     margin-bottom: 2rem;
-
     opacity: 0;
     animation: fadeUp 0.8s ease forwards;
     animation-delay: 0.2s;
@@ -126,7 +124,6 @@ nav {
     border-radius: 25px;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.2s;
-
     opacity: 0;
     animation: fadeUp 0.8s ease forwards;
     animation-delay: 0.4s;
@@ -143,10 +140,68 @@ nav {
     border-radius: 10px;
     object-fit: cover;
     box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
-
     opacity: 0;
     animation: fadeUp 0.8s ease forwards;
     animation-delay: 0.6s;
+}
+
+/* --- About Me Section --- */
+.about-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.about-text p.delay-1 { animation-delay: 0.2s; }
+.about-text p.delay-2 { animation-delay: 0.4s; }
+.about-text p.delay-3 { animation-delay: 0.6s; }
+.about-text p.delay-4 { animation-delay: 0.8s; }
+
+.about-image {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.about-image img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.image-quote {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+    color: var(--text-accent);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.7s;
 }
 
 /* --- Sections --- */
@@ -161,26 +216,23 @@ h1 {
     margin-bottom: 1rem;
 }
 
-/* Paragraph spacing */
 section p {
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
 
-/* --- Fade-in (for About / Research / Resume) --- */
+/* --- Fade-in Animation --- */
 .fade-in {
     opacity: 0;
     transform: translateY(15px);
     animation: fadeUp 0.8s ease forwards;
 }
 
-/* stagger delays */
 .delay-1 { animation-delay: 0.2s; }
 .delay-2 { animation-delay: 0.4s; }
 .delay-3 { animation-delay: 0.6s; }
 .delay-4 { animation-delay: 0.8s; }
 
-/* --- Animation Keyframes --- */
 @keyframes fadeUp {
     to {
         opacity: 1;
@@ -198,5 +250,19 @@ section p {
     .landing-image img {
         max-width: 80%;
         margin-top: 20px;
+    }
+
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-top: 20px;
+    }
+
+    .about-image img {
+        width: 60%;
+        margin: 0 auto;
     }
 }
