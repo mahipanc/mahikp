@@ -1,10 +1,9 @@
 :root {
-    --bg-main: #E0E1DD;
-    --bg-header: #415A77;
-    --text-main: #0D1B2A;
-    --text-accent: #778DA9;
-    --btn-bg: #1B263B;
-    --btn-text: #E0E1DD;
+    --bg-main: #e0e1dd;       /* Page background */
+    --bg-header: #415a77;     /* Headers & navbar background */
+    --text-main: #0d1b2a;     /* Main text color */
+    --text-accent: #1b263b;   /* Accent text color */
+    --highlight: #778da9;     /* Hover and subtle accents */
 }
 
 * {
@@ -30,6 +29,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 2px solid var(--highlight);
 }
 
 .nav-left,
@@ -40,47 +40,41 @@ nav {
 }
 
 .nav-left {
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.nav-left li a {
-    text-decoration: none;
-    color: var(--btn-text);
-    font-weight: bold;
-    transition: color 0.3s, transform 0.2s;
-}
-
-.nav-left li a:hover {
-    color: var(--text-accent);
-    transform: scale(1.05);
-}
-
-/* --- Circular Social Icons --- */
-.nav-right {
-    gap: 10px;
-}
-
+.nav-left li a,
 .nav-right li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    background-color: var(--bg-main);
-    border-radius: 50%;
-    border: 2px solid var(--btn-bg);
-    transition: transform 0.2s, background-color 0.3s;
+    text-decoration: none;
+    color: var(--bg-main);
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s;
 }
 
-.nav-right li a img {
-    width: 26px;
-    height: 26px;
-    object-fit: contain;
-}
-
+.nav-left li a:hover,
 .nav-right li a:hover {
-    background-color: var(--text-accent);
+    color: var(--highlight);
+}
+
+/* Circular icon buttons */
+.nav-right li a img {
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.nav-right li a img:hover {
     transform: scale(1.1);
+}
+
+/* --- Sections --- */
+section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
 }
 
 /* --- Landing Page --- */
@@ -88,99 +82,133 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
-    margin: 100px auto;
-    padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 .landing-text {
-    max-width: 500px;
+    flex: 1;
+    padding-right: 20px;
 }
 
 .landing-text h1 {
-    font-size: 3.5rem;
-    color: #1B263B;
+    font-size: 3rem;
+    color: var(--text-main);
     margin-bottom: 1rem;
-
-    /* subtle fade */
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
 }
 
-.landing-quote {
+.landing-text p {
     font-size: 1.3rem;
-    color: #415A77;
-    margin-bottom: 2rem;
-
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
-    animation-delay: 0.2s;
+    margin-bottom: 1.5rem;
+    color: var(--text-accent);
 }
 
-.btn-landing {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: var(--btn-bg);
-    color: var(--btn-text);
-    font-weight: bold;
+.landing-button {
+    background-color: var(--bg-main);
+    color: var(--bg-header);
+    border: 2px solid var(--bg-header);
     border-radius: 25px;
+    padding: 10px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.2s;
-
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
-    animation-delay: 0.4s;
+    display: inline-block;
 }
 
-.btn-landing:hover {
-    background-color: var(--text-accent);
-    transform: scale(1.05);
+.landing-button:hover {
+    background-color: var(--highlight);
+    color: var(--bg-main);
+}
+
+.landing-image {
+    flex: 1;
+    max-width: 400px;
+    margin-top: 20px;
 }
 
 .landing-image img {
-    width: 550px;
-    max-width: 55%;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     object-fit: cover;
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
-
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
-    animation-delay: 0.6s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
-/* --- Sections --- */
-section {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 0 20px;
+/* --- About Me Section --- */
+.about-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-h1 {
+.about-text {
+    flex: 2;
+}
+
+.about-text h1 {
     color: var(--bg-header);
     margin-bottom: 1rem;
 }
 
-/* Paragraph spacing */
-section p {
-    font-size: 1.1rem;
+.about-text p {
     margin-bottom: 20px;
+    font-size: 1.1rem;
 }
 
-/* --- Fade-in (for About / Research / Resume) --- */
+.about-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-image img {
+    width: 220px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.image-quote {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+    color: var(--text-accent);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.7s;
+}
+
+/* --- Resume & Research Sections --- */
+.section-heading {
+    color: var(--bg-header);
+    margin-bottom: 1rem;
+}
+
+.section-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* --- Animations --- */
 .fade-in {
     opacity: 0;
-    transform: translateY(15px);
-    animation: fadeUp 0.8s ease forwards;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* stagger delays */
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.6s; }
-.delay-4 { animation-delay: 0.8s; }
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-/* --- Animation Keyframes --- */
 @keyframes fadeUp {
     to {
         opacity: 1;
@@ -188,15 +216,51 @@ section p {
     }
 }
 
-/* --- Responsive --- */
+/* --- Buttons inside sections --- */
+.button {
+    background-color: var(--bg-main);
+    color: var(--bg-header);
+    border: 2px solid var(--bg-header);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button img {
+    width: 70%;
+    height: 70%;
+}
+
+.button:hover {
+    background-color: var(--highlight);
+    color: var(--bg-main);
+}
+
+/* --- Responsive Design --- */
 @media (max-width: 900px) {
-    .landing-page {
+    .landing-page,
+    .about-me {
         flex-direction: column;
         text-align: center;
     }
 
-    .landing-image img {
-        max-width: 80%;
+    .landing-image {
+        max-width: 70%;
+        margin: 20px auto;
+    }
+
+    .about-image img {
+        width: 60%;
         margin-top: 20px;
+    }
+
+    .image-quote {
+        margin-top: 10px;
     }
 }
