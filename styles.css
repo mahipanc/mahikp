@@ -66,14 +66,14 @@ nav {
     justify-content: center;
     width: 42px;
     height: 42px;
-    background-color: var(--bg-main);   /* matches site background */
+    background-color: var(--bg-main);
     border-radius: 50%;
-    border: 2px solid var(--btn-bg);    /* subtle outline */
+    border: 2px solid var(--btn-bg);
     transition: transform 0.2s, background-color 0.3s;
 }
 
 .nav-right li a img {
-    width: 26px;   /* bigger icon inside */
+    width: 26px;
     height: 26px;
     object-fit: contain;
 }
@@ -101,15 +101,22 @@ nav {
     font-size: 3.5rem;
     color: #1B263B;
     margin-bottom: 1rem;
+
+    /* subtle fade */
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
 }
 
 .landing-quote {
     font-size: 1.3rem;
     color: #415A77;
     margin-bottom: 2rem;
+
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.2s;
 }
 
-/* --- Landing Button --- */
 .btn-landing {
     display: inline-block;
     padding: 12px 24px;
@@ -119,6 +126,10 @@ nav {
     border-radius: 25px;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.2s;
+
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.4s;
 }
 
 .btn-landing:hover {
@@ -126,13 +137,16 @@ nav {
     transform: scale(1.05);
 }
 
-/* --- Landing Image --- */
 .landing-image img {
     width: 550px;
     max-width: 55%;
     border-radius: 10px;
     object-fit: cover;
     box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.6s;
 }
 
 /* --- Sections --- */
@@ -147,20 +161,31 @@ h1 {
     margin-bottom: 1rem;
 }
 
-p {
+/* Paragraph spacing */
+section p {
     font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
-/* --- Fade-in Animation --- */
+/* --- Fade-in (for About / Research / Resume) --- */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transform: translateY(15px);
+    animation: fadeUp 0.8s ease forwards;
 }
 
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* stagger delays */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+/* --- Animation Keyframes --- */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- Responsive --- */
